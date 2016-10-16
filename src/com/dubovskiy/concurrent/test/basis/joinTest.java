@@ -1,5 +1,7 @@
 package com.dubovskiy.concurrent.test.basis;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * Created by M on 26.09.2016.
  */

@@ -1,4 +1,4 @@
-package com.dubovskiy.concurrent.test.basis;
+package com.dubovskiy.concurrent.test.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

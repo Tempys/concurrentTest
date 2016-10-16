@@ -11,6 +11,13 @@ public class CountDownTest {
         CountDownLatch countDownLatch = new CountDownLatch(3);
 
         Thread a = new Thread(() ->{
+
+
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("start a");
             countDownLatch.countDown();
 
@@ -35,7 +42,6 @@ public class CountDownTest {
         c.start();
 
         countDownLatch.await();
-
 
         System.out.println("main flow");
 
