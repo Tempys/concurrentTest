@@ -1,33 +1,45 @@
 package com.dubovskiy.concurrent.test.queues;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
 public class CustomBlockWaitNotifyQueue
 {
 
-    private volatile List<String> list = new ArrayList<>();
+    private volatile LinkedList<String> list = new LinkedList<>();
     private Object putMonitor = new Object();
     private Object getPutMonitor = new Object();
 
 
-    private void get() throws InterruptedException {
+    public String get()  {
         if(list.isEmpty()){
-           getPutMonitor.wait();
+            try {
+                getPutMonitor.wait();
+            } catch (InterruptedException e) {
+                //ignore
+            }
         }
+
+        String response = list.getLast();
+
+        return response;
 
     }
 
 
-    private void put(String item ) throws InterruptedException {
-        this.notifyAll();
-
+    public void put(String item )  {
 
         if(list.size()>5){
-           this.wait();
+            try {
+                putMonitor.wait();
+            } catch (InterruptedException e) {
+                //ignore
+            }
         }
 
         list.add(item);
+        getPutMonitor.notifyAll();
     }
 }
