@@ -13,8 +13,9 @@ public class ServiceMan {
     private List<String> inQueue;
 
     public ServiceMan(int hardWorking) {
+
         inQueue = new ArrayList<String>();
-        queue = new CyclicBarrier(hardWorking, new Runnable() {
+         queue = new CyclicBarrier(hardWorking, new Runnable() {
             @Override
             public void run() {
                 System.out.println("Filling " + inQueue);
