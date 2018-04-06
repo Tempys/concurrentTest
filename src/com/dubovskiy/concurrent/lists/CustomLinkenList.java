@@ -2,10 +2,6 @@ package com.dubovskiy.concurrent.lists;
 
 
 
-
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * Design an int type singly linkedlist class, and then implement some functions below using the self designed class.
  * Can not use Java built in List interface
