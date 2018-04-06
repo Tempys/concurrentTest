@@ -1,4 +1,4 @@
-package com.dubovskiy.concurrent.test.transfer.money;
+package com.dubovskiy.concurrent.money;
 
 /**
  * Created by M on 25.12.2016.
